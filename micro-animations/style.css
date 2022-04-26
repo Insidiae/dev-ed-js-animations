@@ -33,3 +33,9 @@ body {
 .messages__title {
   padding-left: 2rem;
 }
+
+.notifications__icon,
+.messages__icon {
+  overflow: visible;
+}
+
