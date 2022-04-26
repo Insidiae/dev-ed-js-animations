@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(260deg, hsl(216deg 77% 67%), hsl(190deg 56% 61%));
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  background-color: white;
+  color: black;
+  padding: 5rem;
+  border-radius: 2rem;
+}
+
+.home,
+.notifications,
+.messages {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+
+.home__title,
+.notifications__title,
+.messages__title {
+  padding-left: 2rem;
+}
+
+.notifications__icon,
+.messages__icon {
+  overflow: visible;
+}
+
