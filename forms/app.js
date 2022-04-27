@@ -2,10 +2,14 @@ const form = document.querySelector("form");
 const inputContainers = document.querySelectorAll(".input-container");
 const checkbox = document.querySelector(".checkbox");
 const tickMarkPath = document.querySelector(".tick-mark path");
+const button = document.querySelector("button");
 
 const inputTimeline = gsap.timeline({ defaults: { duration: 1 } });
 const checkboxTimeline = gsap.timeline({
   defaults: { duration: 0.5, ease: "power2.easeOut" },
+});
+const formTimeline = gsap.timeline({
+  defaults: { duration: 0.75, ease: "power2.easeOut" },
 });
 
 function validateEmail(email) {
@@ -134,4 +138,48 @@ document.addEventListener("DOMContentLoaded", (event) => {
     gsap.set(tickMarkPath, { strokeDashoffset: 0 });
     gsap.set(".checkbox-label", { color: "#6391e8" });
   }
+});
+
+gsap.set("#eye", { transformOrigin: "center" });
+gsap.fromTo(
+  "#eye",
+  { scaleY: 1 },
+  {
+    scaleY: 0.3,
+    yoyo: true,
+    repeat: -1,
+    repeatDelay: 0.5,
+    ease: "power2.easeOut",
+  }
+);
+gsap.fromTo(
+  "#eyebrow",
+  { y: 0 },
+  {
+    y: -1,
+    yoyo: true,
+    repeat: -1,
+    repeatDelay: 0.5,
+    ease: "power2.easeOut",
+  }
+);
+
+gsap.set("#hand", { transformOrigin: "left" });
+button.addEventListener("click", (event) => {
+  event.preventDefault();
+  formTimeline.to(".contact-left, .contact-right", {
+    opacity: 0,
+    pointerEvents: "none",
+  });
+  formTimeline.to("form", { scale: 0.8 }, "<");
+  formTimeline.fromTo(
+    ".submitted",
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0 }
+  );
+  gsap.fromTo(
+    "#hand",
+    { rotation: 0, y: 0 },
+    { rotation: -10, y: 2, ease: "elastic(3, 0.3)", duration: 2, delay: 1 }
+  );
 });
