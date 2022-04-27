@@ -1,7 +1,12 @@
-const inputContainers = document.querySelectorAll(".input-container");
 const form = document.querySelector("form");
+const inputContainers = document.querySelectorAll(".input-container");
+const checkbox = document.querySelector(".checkbox");
+const tickMarkPath = document.querySelector(".tick-mark path");
 
-const timeline = gsap.timeline({ defaults: { duration: 1 } });
+const inputTimeline = gsap.timeline({ defaults: { duration: 1 } });
+const checkboxTimeline = gsap.timeline({
+  defaults: { duration: 0.5, ease: "power2.easeOut" },
+});
 
 function validateEmail(email) {
   const regex = /\S+@\S+\.\S+/;
@@ -29,12 +34,12 @@ inputContainers.forEach((container) => {
 
   input.addEventListener("focus", () => {
     if (!input.value) {
-      timeline.fromTo(
+      inputTimeline.fromTo(
         line,
         { attr: { d: startPath } },
         { attr: { d: endPath }, duration: 0.75, ease: "power2.easeOut" }
       );
-      timeline.to(
+      inputTimeline.to(
         line,
         {
           attr: { d: startPath },
@@ -43,7 +48,7 @@ inputContainers.forEach((container) => {
         "<50%"
       );
 
-      timeline.to(
+      inputTimeline.to(
         placeholder,
         {
           y: -15,
@@ -94,4 +99,39 @@ inputContainers.forEach((container) => {
       );
     }
   });
+});
+
+const pathLength = tickMarkPath.getTotalLength();
+gsap.set(tickMarkPath, {
+  strokeDashoffset: pathLength,
+  strokeDasharray: pathLength,
+});
+checkbox.addEventListener("click", () => {
+  if (checkbox.checked) {
+    checkboxTimeline.to(".checkbox-fill", { y: 0 });
+    checkboxTimeline.fromTo(
+      tickMarkPath,
+      { strokeDashoffset: pathLength },
+      { strokeDashoffset: 0 },
+      "<50%"
+    );
+    checkboxTimeline.to(".checkbox-label", { color: "#6391e8" }, "<");
+  } else {
+    checkboxTimeline.fromTo(
+      tickMarkPath,
+      { strokeDashoffset: 0 },
+      { strokeDashoffset: pathLength }
+    );
+    checkboxTimeline.to(".checkbox-fill", { y: "100%" }, "<50%");
+    checkboxTimeline.to(".checkbox-label", { color: "#c5c5c5" }, "<");
+  }
+});
+
+//? Fix for Firefox sometimes persisting checkbox being checked when the page reloads
+document.addEventListener("DOMContentLoaded", (event) => {
+  if (checkbox.checked) {
+    gsap.set(".checkbox-fill", { y: 0 });
+    gsap.set(tickMarkPath, { strokeDashoffset: 0 });
+    gsap.set(".checkbox-label", { color: "#6391e8" });
+  }
 });
