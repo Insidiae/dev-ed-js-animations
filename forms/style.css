@@ -47,6 +47,7 @@ form {
   padding: 0.3rem 0;
   font-size: 0.6rem;
   opacity: 0.6;
+  transform-origin: left;
   z-index: 1;
   pointer-events: none;
 }
@@ -57,12 +58,17 @@ form {
   width: 100%;
   height: 100%;
   border: none;
+  outline: none;
+  color: hsl(0deg 1% 46%);
+  font-size: 0.7rem;
 }
 
 .line-svg {
   position: absolute;
   left: 0;
   bottom: 0;
+  opacity: 0.8;
+  overflow: visible;
 }
 
 .promo-container {
