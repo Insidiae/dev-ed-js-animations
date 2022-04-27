@@ -10,5 +10,6 @@ body {
   align-items: center;
   height: 100vh;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(90deg, #6190e8, #a7bfe8);
+  background: linear-gradient(90deg, hsl(219deg 75% 65%), hsl(218deg 59% 78%));
 }
+
