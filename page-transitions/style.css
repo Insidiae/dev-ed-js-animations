@@ -156,3 +156,48 @@ nav {
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .showcase {
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 85vh;
+    padding: 20%;
+  }
+
+  .showcase__text {
+    padding-bottom: 0;
+  }
+
+  .showcase__title {
+    font-size: 1.5rem;
+  }
+
+  .showcase__subtitle {
+    font-size: 1rem;
+    padding: 2rem;
+  }
+
+  .showcase__image-container {
+    justify-content: center;
+    order: 1;
+    min-height: 30vh;
+  }
+
+  .showcase__arrow {
+    bottom: 50%;
+    right: 5%;
+  }
+
+  .circle--1,
+  .circle--2 {
+    display: none;
+  }
+
+  .circle--3 {
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(3);
+    pointer-events: none;
+  }
+}
+
