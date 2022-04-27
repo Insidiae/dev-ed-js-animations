@@ -84,6 +84,24 @@ const enterAnimation = (nextContainer, done, gradient) => {
   );
 };
 
+const productLeaveAnimation = (currentContainer, done) => {
+  console.log(currentContainer);
+  leaveTimeline.fromTo(
+    currentContainer,
+    { y: 0 },
+    { y: "100%", onComplete: done }
+  );
+};
+
+const productEnterAnimation = (nextContainer, done) => {
+  enterTimeline.fromTo(nextContainer, { y: "100%" }, { y: 0 });
+  enterTimeline.fromTo(
+    ".card",
+    { opacity: 0, y: 50 },
+    { opacity: 1, y: 0, stagger: 0.1, onComplete: done }
+  );
+};
+
 barba.init({
   preventRunning: true,
   transitions: [
@@ -106,6 +124,22 @@ barba.init({
         const nextContainer = data.next.container;
         const gradient = getGradient(data.next.namespace);
         enterAnimation(nextContainer, done, gradient);
+      },
+    },
+    {
+      name: "product-transition",
+      sync: true,
+      from: { namespace: ["handbag", "product"] },
+      to: { namespace: ["product", "handbag"] },
+      leave(data) {
+        const done = this.async();
+        const currentContainer = data.current.container;
+        productLeaveAnimation(currentContainer, done);
+      },
+      enter(data) {
+        const done = this.async();
+        const nextContainer = data.next.container;
+        productEnterAnimation(nextContainer, done);
       },
     },
   ],

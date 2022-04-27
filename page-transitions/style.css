@@ -111,3 +111,48 @@ nav {
   transform: scale(1.5);
 }
 
+/* PRODUCT PAGE */
+.product {
+  position: absolute;
+  width: 100vw;
+  min-height: 90vh;
+  background-color: white;
+  z-index: 5;
+}
+
+.product__description {
+  padding: 5% 15%;
+  color: hsl(0deg 0% 29%);
+}
+
+.product__heading {
+  font-size: 2rem;
+}
+
+.product__subheading {
+  padding: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.product__gallery {
+  display: grid;
+  padding: 0 15%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+}
+
+.card {
+  padding: 2rem;
+}
+
+.card__img {
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
