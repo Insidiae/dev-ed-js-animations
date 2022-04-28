@@ -94,3 +94,25 @@ swatches.forEach((swatch, index) => {
     gsap.to(gallery, { x: -coord, duration: 1, ease: "back.out(1)" });
   });
 });
+
+const videoTimeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".fifth-page",
+    start: "0%",
+    end: "150%",
+    pin: true,
+    scrub: true,
+  },
+});
+
+videoTimeline.fromTo(
+  ".product-video",
+  { currentTime: 0 },
+  { currentTime: 3, duration: 1 }
+);
+videoTimeline.fromTo(
+  ".product-features",
+  { opacity: 0 },
+  { opacity: 1, duration: 0.5, stagger: 0.25 },
+  "<"
+);
