@@ -167,6 +167,7 @@ h4 {
   position: relative;
   display: flex;
   min-height: 100vh;
+  isolation: isolate;
 }
 
 .purchase-left {

@@ -116,3 +116,16 @@ videoTimeline.fromTo(
   { opacity: 1, duration: 0.5, stagger: 0.25 },
   "<"
 );
+
+const parallaxTimeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".sixth-page",
+    start: "-25%",
+    end: "50%",
+    scrub: true,
+  },
+});
+
+parallaxTimeline.fromTo(".photo-description", { y: 0 }, { y: -80 });
+parallaxTimeline.fromTo(".portrait-container", { y: 0 }, { y: -80 }, "<");
+parallaxTimeline.fromTo(".camera", { y: 0 }, { y: -350 }, "<");
