@@ -1,0 +1,308 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+a,
+button,
+h1,
+h2,
+h3,
+h4 {
+  color: hsl(0deg 0% 16%);
+}
+
+.nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  min-height: 8vh;
+  padding: 0 20%;
+  background-color: hsl(0deg 0% 100% / 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-left: 2rem;
+}
+
+.btn--buy {
+  margin-left: 2rem;
+  padding: 0.2rem 2rem;
+  font-size: 0.6rem;
+  border-style: none;
+  border-radius: 1rem;
+  background-color: #3056f5;
+  color: hsl(0deg 0% 100%);
+  cursor: pointer;
+}
+
+/* FIRST PAGE */
+
+.first-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 20%;
+  isolation: isolate;
+}
+
+.first-page__text {
+  z-index: 1;
+  text-align: center;
+  padding-bottom: 10rem;
+}
+
+.first-page__title {
+  font-size: 1.5rem;
+}
+
+.first-page__subtitle {
+  font-size: 3rem;
+}
+
+.intro-video {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* SECOND PAGE */
+.second-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 125vh;
+  color: hsl(0deg 0% 100% / 0.6);
+  isolation: isolate;
+}
+
+.smoke-video {
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+.second-page__text {
+  padding: 5% 30%;
+  font-size: 3.5rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+/* THIRD PAGE */
+.third-page {
+  position: relative;
+  padding: 0 20%;
+  isolation: isolate;
+}
+
+.product-text-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsl(0deg 0% 100%);
+}
+
+.phone-size {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.phone-size--pro {
+  text-align: right;
+}
+
+.phone-size--max {
+  text-align: left;
+}
+
+.product-images {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.phone--large {
+  transform: translateX(40%) scale(0.8);
+  z-index: 1;
+}
+
+.phone--small {
+  transform: translateX(-40%) scale(0.8);
+  z-index: 2;
+}
+
+.retina-line {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transform: translate(-50%, -15%);
+}
+
+/* FOURTH PAGE */
+.fourth-page {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.purchase-left {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0deg 0% 100%);
+  overflow: hidden;
+}
+
+.phone-gallery {
+  display: flex;
+  align-self: flex-start;
+}
+
+.phone-gallery__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50vw;
+}
+
+.phone-back {
+  transform: scale(0.8);
+}
+
+.swatch-container {
+  text-align: center;
+}
+
+.swatch-color {
+  padding: 0.5rem 0.3rem;
+  cursor: pointer;
+}
+
+.swatch-text {
+  font-size: 0.8rem;
+}
+
+.purchase-right {
+  position: relative;
+  flex: 1;
+  background-color: hsl(0deg 0% 0%);
+}
+
+.phone-closeup {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  transform-origin: bottom;
+}
+
+/* FIFTH PAGE */
+.fifth-page {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.product-video {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 10rem;
+}
+
+.product-info__left,
+.product-info__right {
+  width: 20%;
+}
+
+.product-features {
+  padding: 3rem 0;
+  color: hsl(0deg 0% 76%);
+}
+
+.product-features span {
+  font-size: 1.5rem;
+  color: hsl(0deg 0% 82%);
+}
+
+/* SIXTH PAGE */
+.sixth-page {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 10% 20%;
+}
+
+.photo-title {
+  font-size: 2rem;
+}
+
+.photo-subtitle {
+  font-size: 4rem;
+}
+
+.portrait {
+  height: 70vh;
+}
+
+.camera {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  z-index: 2;
+  transform: translateX(-40%);
+  isolation: isolate;
+}
+
+.camera__frame {
+  position: absolute;
+  bottom: 0;
+  transform: scale(0.8);
+  z-index: 1;
+}
+
+.camera__video {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  border-radius: 2rem;
+  transform: scale(0.82);
+}
+
