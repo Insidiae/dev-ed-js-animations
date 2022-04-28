@@ -10,5 +10,74 @@ h1,
 h2,
 h3,
 h4 {
-  color: rgb(40, 40, 40);
+  color: hsl(0deg 0% 16%);
 }
+
+.nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  min-height: 10vh;
+  padding: 0 20%;
+  background-color: hsl(0deg 0% 100% / 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-left: 2rem;
+}
+
+.btn--buy {
+  margin-left: 2rem;
+  padding: 0.2rem 2rem;
+  font-size: 0.6rem;
+  border-style: none;
+  border-radius: 1rem;
+  background-color: #3056f5;
+  color: hsl(0deg 0% 100%);
+  cursor: pointer;
+}
+
+/* FIRST PAGE */
+
+.first-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 20%;
+  isolation: isolate;
+}
+
+.first-page__text {
+  z-index: 1;
+  text-align: center;
+  padding-bottom: 10rem;
+}
+
+.first-page__title {
+  font-size: 1.5rem;
+}
+
+.first-page__subtitle {
+  font-size: 3rem;
+}
+
+.intro-video {
+  position: absolute;
+  /* bottom: 0; */
+  /* right: 0; */
+}
+
