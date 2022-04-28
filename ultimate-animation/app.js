@@ -70,3 +70,27 @@ const phoneSplitPinTimeline = gsap.timeline({
     pinSpacing: false,
   },
 });
+
+const swatches = document.querySelectorAll(".swatch-color");
+const gallery = document.querySelector(".phone-gallery");
+const slides = document.querySelectorAll(".phone-gallery__item");
+const allCloseUps = Array.from(document.querySelectorAll(".phone-closeup"));
+
+gsap.set(".phone-closeup--blue", { opacity: 1, zIndex: 1 });
+
+swatches.forEach((swatch, index) => {
+  const coord = slides[index].getBoundingClientRect().left;
+
+  swatch.addEventListener("click", (event) => {
+    const swatchName = event.target.dataset.swatch;
+    const closeUp = document.querySelector(`.phone-closeup--${swatchName}`);
+    const others = allCloseUps.filter(
+      (c) => !c.classList.contains(`phone-closeup--${swatchName}`)
+    );
+
+    gsap.set(closeUp, { zIndex: 1 });
+    gsap.to(others, { opacity: 0, duration: 1 });
+    gsap.fromTo(closeUp, { opacity: 0 }, { opacity: 1, duration: 1 });
+    gsap.to(gallery, { x: -coord, duration: 1, ease: "back.out(1)" });
+  });
+});
