@@ -77,8 +77,8 @@ h4 {
 
 .intro-video {
   position: absolute;
-  /* bottom: 0; */
-  /* right: 0; */
+  bottom: 0;
+  right: 0;
 }
 
 /* SECOND PAGE */
@@ -95,6 +95,8 @@ h4 {
 .smoke-video {
   position: absolute;
   width: 100vw;
+  bottom: 0;
+  right: 0;
   height: 100%;
   object-fit: cover;
 }
@@ -104,5 +106,59 @@ h4 {
   font-size: 3.5rem;
   font-weight: bold;
   z-index: 1;
+}
+
+/* THIRD PAGE */
+.third-page {
+  position: relative;
+  padding: 0 20%;
+  isolation: isolate;
+}
+
+.product-text-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsl(0deg 0% 100%);
+}
+
+.phone-size {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.phone-size--pro {
+  text-align: right;
+}
+
+.phone-size--max {
+  text-align: left;
+}
+
+.product-images {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.phone--large {
+  transform: translateX(40%) scale(0.8);
+  z-index: 1;
+}
+
+.phone--small {
+  transform: translateX(-40%) scale(0.8);
+  z-index: 2;
+}
+
+.retina-line {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transform: translate(-50%, -15%);
 }
 
