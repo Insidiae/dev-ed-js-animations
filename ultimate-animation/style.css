@@ -162,3 +162,62 @@ h4 {
   transform: translate(-50%, -15%);
 }
 
+/* FOURTH PAGE */
+.fourth-page {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+}
+
+.purchase-left {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.phone-gallery {
+  display: flex;
+  align-self: flex-start;
+}
+
+.phone-gallery__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50vw;
+}
+
+.phone-back {
+  transform: scale(0.8);
+}
+
+.swatch-container {
+  text-align: center;
+}
+
+.swatch-color {
+  padding: 0.5rem 0.3rem;
+  cursor: pointer;
+}
+
+.swatch-text {
+  font-size: 0.8rem;
+}
+
+.purchase-right {
+  position: relative;
+  flex: 1;
+  background-color: hsl(0deg 0% 0%);
+}
+
+.phone-closeup {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  transform-origin: bottom;
+}
+
