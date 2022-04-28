@@ -19,7 +19,7 @@ h4 {
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  min-height: 10vh;
+  min-height: 8vh;
   padding: 0 20%;
   background-color: hsl(0deg 0% 100% / 0.6);
   backdrop-filter: blur(10px);
@@ -79,5 +79,30 @@ h4 {
   position: absolute;
   /* bottom: 0; */
   /* right: 0; */
+}
+
+/* SECOND PAGE */
+.second-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 125vh;
+  color: hsl(0deg 0% 100% / 0.6);
+  isolation: isolate;
+}
+
+.smoke-video {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+.second-page__text {
+  padding: 5% 30%;
+  font-size: 3.5rem;
+  font-weight: bold;
+  z-index: 1;
 }
 
