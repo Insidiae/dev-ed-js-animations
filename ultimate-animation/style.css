@@ -259,3 +259,48 @@ h4 {
   color: hsl(0deg 0% 82%);
 }
 
+/* SIXTH PAGE */
+.sixth-page {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 10% 20%;
+}
+
+.photo-title {
+  font-size: 2rem;
+}
+
+.photo-subtitle {
+  font-size: 4rem;
+}
+
+.portrait {
+  height: 70vh;
+}
+
+.camera {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  z-index: 2;
+  transform: translateX(-40%);
+  isolation: isolate;
+}
+
+.camera__frame {
+  position: absolute;
+  bottom: 0;
+  transform: scale(0.8);
+  z-index: 1;
+}
+
+.camera__video {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  border-radius: 2rem;
+  transform: scale(0.82);
+}
+
