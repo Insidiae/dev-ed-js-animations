@@ -175,6 +175,7 @@ h4 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: hsl(0deg 0% 100%);
   overflow: hidden;
 }
 
